@@ -1,0 +1,38 @@
+<h1>Gürsel Gökce</h1>
+
+<h1>Avatar Creator</h1>
+
+<br><br>
+
+<div *ngIf="inAvatars" (change)="LookMood()">
+    <!--(change)="this.child.ChangeFace(selectType, selectNaam,selectMood)"-->
+    <select *ngIf="showMood" [(ngModel)]="selectMood">
+        <option *ngFor="let mood of inAvatars.male.mood" [value]="mood">{{mood}}</option>
+    </select>
+
+    <select [(ngModel)]="selectType">
+        <option *ngFor="let type of inAvatars.options.options" [value]="type">{{type}}</option>
+    </select>
+    <input type="text" [(ngModel)]="selectNaam" value="Naam">
+    <!--(keyup)="this.child.ChangeFace(selectType, selectNaam, selectMood)"-->
+    <br>
+    <app-gokce-child [type]="selectType" [name]="selectNaam" [mood]="selectMood"></app-gokce-child>
+</div>
+
+<h1>Avatar Adorable:</h1>
+
+<div *ngIf="inFace" (change)="ChangeAdorable(selectOog, selectNeus, selectMond)">
+    <select [(ngModel)]="selectOog">
+        <option *ngFor="let eyes of inFace.eyes" [value]="eyes">{{eyes}}</option>
+    </select>
+
+    <select [(ngModel)]="selectNeus">
+        <option *ngFor="let nose of inFace.nose" [value]="nose">{{nose}}</option>
+    </select>
+
+    <select [(ngModel)]="selectMond">
+        <option *ngFor="let mouths of inFace.mouth" [value]="mouths">{{mouths}}</option>
+    </select>
+</div>
+<br>
+<img src={{imageAdorable}} width="100px" height="100px">

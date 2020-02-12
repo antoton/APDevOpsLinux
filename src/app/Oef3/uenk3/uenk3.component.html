@@ -1,0 +1,30 @@
+<div class="converter">
+  <h1><u>Currency Converter</u></h1>
+  <p>From: <b>{{fromCurrency}}</b></p>
+  <p>To: <b>{{toCurrency}}</b></p>
+  
+  <div class="fields">
+    <input type="number" [(ngModel)]="ChangeValue">
+    <br>
+
+    From:
+    <select [(ngModel)]="FromCurrency" id="formCurrencySelector" (change)="ChangeFromCurrency(FromCurrency)" >
+      <option *ngFor="let currency of currencyList; let i = index" [value]="i">
+          {{currency}}
+      </option>
+    </select>
+    To:
+    <select [(ngModel)]="ToCurrency" id="toCurrencySelector" (change)="ChangeToCurrency(ToCurrency)">
+      <option *ngFor="let currency of currencyList; let i = index" [value]="i">
+          {{currency}}
+      </option>
+    </select>
+
+    <p class="result">{{fromValue}} {{fromCurrency}} is <b>{{resultValue}} {{toCurrency}}</b></p>
+    <p>(Last Changed on: <b>{{lastChanged}})</b></p>
+  </div>
+  
+</div>
+<div class="bitcoin">
+  <app-uenk-child [fromValue]=fromValue></app-uenk-child>
+</div>

@@ -1,0 +1,21 @@
+<button  (click)="toggle()"> Search</button>
+
+<div *ngIf="ArticleInfo">
+    <div *ngFor="let item of AllArtikles">   
+        <br>
+        Source : {{item.Source}} 
+        <img src="{{Avatar(item.Source)}}" alt="" height="30">
+        <br>
+        Title : {{item.Title}}
+        <br>
+        <img src="{{item.img}}" alt=""  height="50px"> 
+        <br>
+        {{item.Description}}
+    </div>
+</div>
+
+
+        
+      
+
+

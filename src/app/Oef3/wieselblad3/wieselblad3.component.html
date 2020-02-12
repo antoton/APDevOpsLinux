@@ -1,0 +1,41 @@
+<br>
+<div class=ChuckNorrisJokes>
+<div class = header><h1>Chuck Norris Joke Generator</h1></div>
+<input type="button" value="Get New Joke" (click)="GetNewJoke()">
+<div class="Joke">{{CNgrap}}</div>
+<br>
+<div class="andereNaam">
+        <h2>Change Chuck!</h2>
+        <div class="voornaam">
+            <h3>Voornaam</h3>
+            <input [(ngModel)]="voornaam" type="text" placeholder="Chuck">
+        </div>
+        <div class="achternaam">
+            <h3>achternaam</h3>
+            <input [(ngModel)]="naam" type="text" placeholder="Norris">
+        </div>
+</div>
+    <div class="Joke">
+        <app-wieselblad-child [Voornaam]="voornaam" [Naam]="naam"></app-wieselblad-child>
+        <input type="button" value="Get PersonalJoke" (click)="GetPersonalJoke(this.naam, this.voornaam)">
+        <br>
+        {{PERgrap}}
+    </div>
+
+</div>
+<div class="service2">
+    <input type="text" #inputTo placeholder="TO">
+    <input type="text" #inputFrom placeholder="FROM">
+    <br>
+    <input type="button" value="Send your ChristmasCard" (click)="Get(inputTo.value, inputFrom.value)">
+    <br>
+    <div *ngIf="text" class="vandrielService">
+    {{text.message}}
+    <br>
+    <br>
+    {{text.subtitle}}
+    </div>
+</div>
+
+
+

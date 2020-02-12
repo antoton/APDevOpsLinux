@@ -1,0 +1,69 @@
+.blackButton {
+    margin: 10px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    width: auto;
+}
+
+.TradesFlex, .TradesLegenda {
+    display: flex;
+    flex-direction: row;
+}
+
+td {
+    flex-basis: 50%;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 8px;
+}
+
+.TradesLegenda td {
+    color: red;
+    font-style: bold;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.AccountInfo {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    border: black 1px solid;
+    margin: 10px;
+}
+
+.AccountInformation {
+    flex-basis: 33%;
+}
+
+.BitcoinPrice {
+    font-size: 20px;
+}
+
+.BitcoinImage {
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.TradesViewer {
+    border: black solid 1px;
+    margin: 10px;
+}
+
+/*Border Around Component*/
+
+.FatBorder {
+    border: solid black 7px;
+    margin: 2px;
+}
+
+.Title {
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

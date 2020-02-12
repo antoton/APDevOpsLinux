@@ -1,0 +1,39 @@
+<div class="FatBorder">
+    <H1 class="Title">CRYPTO 3 IN 1 TOOLBOX</H1>
+    <h1 class="Title">Mohamed El Moufid</h1>
+    <h2>BTC TRADE SIMULATOR (LITE)</h2>
+    <h2>*API has slow data, wait few seconds to see a difference (profit, equity etc)</h2>
+
+    <div class="AccountInfo">
+        <h2 class="AccountInformation">Floating P/L: {{FloatingPL | currency: 'EUR'}} </h2>
+        <h2 class="AccountInformation"> Balance: {{Balance | currency: 'EUR'}} </h2>
+        <h2 class="AccountInformation">Equity: {{Equity | currency: 'EUR'}} </h2>
+    </div>
+
+    <img class="BitcoinImage" src="https://www.coinopsy.com/media/img/quality_logo/bitcoin-btc.png" alt="">
+    <p class="BitcoinPrice" *ngIf="CurrentPrice"> {{CurrentPrice | currency: 'EUR'}} </p>
+    <h1 *ngIf="!CurrentPrice">UNABLE TO PLACE TRADES..</h1>
+    <h1 *ngIf="!CurrentPrice">WAITING FOR RESPONSE FROM API... THIS CAN TAKE FEW SECONDS...</h1>
+
+    <input #amount type="number" name="" id="" min="1">
+    <button class="blackButton" (click)=PlaceTrade(amount.value)> BUY </button>
+
+    <div class="TradesViewer">
+
+        <tr class="TradesLegenda">
+            <td>Amount</td>
+            <td>Entry</td>
+            <td>Profit</td>
+        </tr>
+
+        <tr class="TradesFlex" *ngFor="let Trade of Trades">
+            <td>{{Trade.Amount}} BTC</td>
+            <td>{{Trade.EntryPoint  | currency: 'EUR'}}</td>
+            <td>{{Trade.Profit | number:'0.0-2' | currency: 'EUR'}}</td>
+        </tr>
+
+    </div>
+
+</div>
+
+<app-elmoufid-child [Title1]="title1" [Title2]="title2" [Money]="Balance"></app-elmoufid-child>

@@ -1,0 +1,29 @@
+<div class="main">
+    <h1><app-shani-child [parentTitle]="parentTitle"></app-shani-child></h1>
+    <input [(ngModel)]="missionID" placeholder="missienummer bv:25,65">
+    <button (click)="GetLaunchInfo(missionID)">Launch Info</button>
+    <div *ngIf="launchData" class="result">
+        <div class="resultHead"><b>{{launchData.missionID}} {{launchData.missionName}}</b></div>
+        <div class="resultMain">
+            <p>Date of launch: {{launchData.launchDate | date : fulltime}}</p>
+            <p>Rocket used: {{launchData.rocketName}}</p>
+            <p></p>
+        </div>
+        <div class="images">
+            <img width="300" height="300" src={{images[0]}} alt="">
+        </div>
+        <div class="resultHead"><b>Timeline</b></div>
+        <div class="timeline">
+            <p>Ignition: {{timelineData.ignition}} seconds</p>
+            <p>Liftoff: {{timelineData.liftoff}} seconds</p>
+            <p>Maxq: {{timelineData.maxq}} seconds</p>
+            <p>Stage seperation: {{timelineData.stageSep}} seconds</p>
+            <p>Second stage ignition: {{timelineData.secondStageIgnition}} seconds</p>
+            <p>Fairing Deploy: {{timelineData.fairingDeploy}} seconds</p>
+            <p>First stage entry burn: {{timelineData.firstStageEntryBurn}} seconds</p>
+            <p>First stage landing: {{timelineData.firstStageLanding}} seconds</p>
+            <p>Payload deploy: {{timelineData.payloadDeploy}} seconds</p>
+        </div>
+    </div>
+    
+</div>

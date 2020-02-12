@@ -1,0 +1,26 @@
+.inputHeader{
+    background-color: darkgrey;
+    padding: 5px;
+    border: darkred solid 5px;
+    margin: 2em;
+}
+
+table {
+    border: 5px solid darkred;
+    background-color: darkgrey;
+    text-align: center;
+    vertical-align: middle;
+  }
+table td, table tr {
+    border: 5px solid darkred;
+    text-align: center;
+    vertical-align: middle;
+}
+.ui-button-warning{
+    margin: 5px;
+}
+.summaryDiv:not(:empty){
+    background-color: darkgrey;
+    border:5px solid darkred;
+    margin:5px;
+}

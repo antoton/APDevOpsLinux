@@ -1,0 +1,25 @@
+<div class="FatBorder">
+    <h1>Medeleerling Service {{title1}}</h1>
+    <h2>U have a balance of {{money | currency:'EUR'}} (als @inpt)</h2>
+    <h2>Its important to secure your online wallets with a strong password</h2>
+    <h2>Only then is your money safe</h2>
+
+    <button class="blackButton" (click)="GenerateNewPassword(limit.value)">PRESS HERE TO GENERATE NEW PASSWORD</button>
+    <br><br>
+    <p>MIN LENGTH: <input #limit type="number" name="" id="" min="8"></p>
+    <br>
+
+    <h2 class="Result">{{GenaratedPassword}}</h2>
+</div>
+
+<div class="FatBorder">
+    <h1>Medeleerling Service {{title2}}</h1>
+    <h2>Whitelist your ip adress on your crypto exchange</h2>
+    <p>What is a white list? <a [href]="explainVideo"> Explanation video</a> </p>
+    <br>
+    <button class="blackButton" (click)="ShowCurrentIPAdress()">SHOW PUBLIC IP ADRESS</button>
+    <br>
+    <h2 class="Result">{{CurrentIPAdress}}</h2>
+    <br>
+
+</div>

@@ -1,0 +1,36 @@
+<h1>Welcome to the Space Database</h1>
+<p>Select the category you want to know more of</p>
+<select [(ngModel)]="category">
+    <option value="Rockets">Rockets</option>
+    <option value="Launches">Launches</option>
+</select>
+
+<div *ngIf="category=='Rockets'">
+<p>Give a rocket name</p>
+<input [(ngModel)]="rocket"/>
+<button (click)="FindRocket(rocket)">Search</button>
+<div *ngIf="rocketInfo">
+    <div *ngFor="let r of rocketInfo">
+<p>{{r.name}}</p>
+<p>Default pads: {{r.defaultPads}}</p>
+<p>{{r.wikiUrl}}</p>
+<img src={{r.imageUrl}} width=200 height=200/>
+</div>
+</div>
+</div>
+
+<div *ngIf="category=='Launches'">
+    <p>Give a start date (format:yyyy-mm-dd)</p>
+    <input [(ngModel)]="startDate"/>
+    <p>*optional* Give an end date (format:yyyy-mm-dd)</p>
+    <input [(ngModel)]="endDate"/>
+    <button (click)="FindLaunches(startDate,endDate)">Search</button>
+    <div *ngIf="launchInfo">
+        <div *ngFor="let l of launchInfo">
+    <p>{{l.name}}</p>
+    <p>start: {{l.windowstart}}</p>
+    <p>end: {{l.windowend}}</p>
+    <p>rocket: {{l.rocketName}}</p>
+    <p></p>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h2>{{txtKop}}</h2>
+<div>
+    <button (click)="getRandomName(true)">{{btnBelgium}}</button>
+    <button (click)="getRandomName(false)">{{btnGermany}}</button>
+</div>
+<br>
+
+<div>
+    <p></p>
+    <p>{{addressing}} {{name}} {{surname}}</p>
+</div>
+<app-boeckx-child [MopjesTonen]="MopjesTonen"></app-boeckx-child>
