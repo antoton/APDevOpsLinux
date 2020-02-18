@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Huisartsengroep Pulhof</title>
+    <style>
+        /*Gedachten achter de styling: 
+            Afspraak button altijd centraal, zeer duidelijk.
+            Alle belangrijke info rond consultaties duidelijk en in de buurt van button
+            Contact-gegevens en locatie ook centraal en duidelijk.
+            Nieuws in de geneeskunde onderaan, tonen van professionaliteit en up-to-date zijn met nieuwste trend.
+        */
+        body {
+            margin: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 1em;
+            background-color: #fcf8f3;
+        }
+        .foto {
+            height:5em; width: 100%;
+            background-image: url(dokters.jpg);
+            background-size:100%
+        }
+        header {
+            min-height: 10em;
+            width: auto;
+            background-color: #fcf8f3;
+            padding: 0px;
+        }
+        .contactinfo {
+            height:auto; width: auto;
+            display: inline-block
+        }
+        ul {
+            list-style:none;            
+        }
+        h1 ~ ul {
+            font-size:1.1em;
+            margin-bottom:0;
+        }
+        /*General sibling selector: Elke lijst met een header als sibling mag iets groter. Hier niet erg relevant en voor opdracht erin gestoken. had ook h1 + ul kunnen zijn hier.*/
+
+        
+        /*Logo niet te opzichtig. Mag niet te hard afleiden van hoofd-info*/
+        .heart {
+            padding: 0.5em;
+            width: 6em;
+            animation-name: hart;
+            animation-duration: 3s;
+            animation-iteration-count:infinite;
+        }
+        @keyframes hart {
+            60% {transform: scale(1)}
+            70% { transform: scale(1.1)}
+            80% { transform: scale(1) }
+            90% { transform: scale(1.05)}
+            100% {transform: scale(1)}
+
+        }
+
+        .main {
+            height: auto;
+            width: 100%;
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 160px repeat(2, 1fr);
+            background-color: #aedadd;
+        }
+        .dokters {
+            order: 1;
+            border-right: 4px double gray;
+            margin-right: 5px;
+        }
+        .main ul {
+            margin: 0;
+            padding: 0;
+        }
+        /*Descendant selector: voor alle lijstjes onder de main content hoeft er geen padding of margin te zijn*/
+        .bigbutton {
+            order: 2;
+        }
+        .afwezigheden {
+            order: 3;
+            color: red
+        }
+        .bigbutton > a {
+            font-size: 1.8em;
+        }
+        /*Child selector: de link onder bigbutton moet inderdaad een big-button zijn; andere links niet.*/
+        a + p {
+            font-size: 1.20em;
+        }
+        .main + div {
+            background-color: #6e7da2;
+            color: white;
+        }
+        /*Adjacent selector: de paragraaf na een link mag goed benadrukt worden.*/
+        .info {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+            background-color: #aedadd;
+        }
+        .info > div {
+            flex: 1 none auto;
+            width: 250px;
+            margin: 2px;
+            border: 1px solid #A30B37;
+            padding: 2px;
+            background-color: white;
+        }
+
+        /*Mobile---------------------------*/
+        @media (max-width:600px) {
+            .heart {
+                display: none;
+            }
+            header {
+                height: 6em;
+            }
+            .main{
+                grid-template-rows: repeat(2, auto);
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bigbutton {
+                order: 1;
+            }
+            .afwezigheden {
+                order: 2;
+            }
+            .dokters {
+                order: 3;
+                border-right: none;             
+            }
+        }
+        @media (max-width:480px){
+            .main {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .info {
+                justify-content: center;
+            }
+            }
+            h1 {
+                margin:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="foto"></div>
+    <header>
+        <img src="redheart2.png" alt="Redheart" class="heart"/>
+        <div class="contactinfo">
+            <h1>Huisartsengroep Pulhof</h1>
+                <ul>
+                    <li>Grotesteenweg 491</li>
+                    <li>2600 Berchem</li>
+                    <li>Tel:555-489517353</li>
+                </ul>
+        </div>
+        
+    </header>
+    <div class="main">
+        <div class="dokters">
+            Huisartsen:
+            <ul>
+                <li><a href="pulhof/vandenheuvel">dr. Van Den Heuvel</a></li>
+                <li><a href="pulhof/devalensart">dr. De Valensart</a></li>
+                <li><a href="pulhof/verhaeren">dr. Verhaeren</a></li>
+                <li><a href="pulhof/taisha">dr. Taisha</a></li>
+            </ul>
+        </div>
+        <div class="bigbutton">
+            <a href="Afspraak">Klik hier om een afspraak te maken</a>
+            <p>Info consultaties: <br /> Maandag-vrijdag: <br /> 10-18u op afspraak<br />8:30-10u vrije consultaties <br />Huisbezoeken telefonisch vast te leggen</p>
+        </div>
+        <div class="afwezigheden">
+            <ul>
+                <li>Alle artsen zijn afwezig van 28/12 tot 3/01</li>
+                <li>Dr. De Valensart verlaat onze kliniek op 30/02</li>
+            </ul>
+        </div>
+    </div>
+    <div>Bloedonderzoeken en resultaten zijn telefonisch te verkrijgen tijdens de telefoonuren. De uren vindt u bij de pagina's van de huisartsen. <br /> Nieuws in de geneeskunde:</div>
+    <div class="info">
+        <div>
+            <a href="https://www.tvg.be/sites/default/files/generated/press/20181220%20PERSBERICHT%20KUL%20Leuvense%20onderzoekers%20ontwikkelen%20beloftevol%20vaccin%20tegen%20Zika.pdf">Game over voor Zika? Leuvense onderzoekers ontwikkelen beloftevol vaccin</a>
+        </div>
+        <div>
+            <a href="https://www.tvg.be/sites/default/files/generated/press/20181210%20PERSBERICHT%20UG%20Grounded’%20lopen%20belast%20het%20bewegingsstelsel%20veel%20minder%20dan%20klassieke%20looptechniek.pdf">"Grounded" lopen belast het bewegingsstelsel veel minder dan klassieke looptechniek</a>
+
+        </div>
+        <div><a href="https://www.tvg.be/sites/default/files/generated/press/20181210%20PERSBERICHT%20JYZ%20OPAT.pdf">Patiënt krijgt voortaan thuis antibiotica dankzij OPAT</a>
+
+        </div>
+        <div>
+            <a href="https://www.tvg.be/sites/default/files/generated/press/20181207%20PERSBERICHT%20JYZ%20Twoape.pdf">32 Extra plaatsen in jeugdpsychiatrie dankzij 'Twoape'</a>
+
+        </div>
+    </div>
+    <footer><p>&copy; Antoton-sites<p></footer>
+</body>
+</html>
